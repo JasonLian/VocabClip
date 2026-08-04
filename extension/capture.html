@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>添加到 VocabClip</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <div class="hero"><span class="mark">V</span><div><h1>添加到 VocabClip</h1><div id="subtitle" class="muted">正在用 DeepSeek 整理内容</div></div></div>
+      <div class="grid">
+        <div class="field"><label for="term">单词或短语</label><input id="term"></div>
+        <div class="field"><label for="ipa">音标</label><input id="ipa"></div>
+        <div class="field"><label for="partOfSpeech">词性</label><input id="partOfSpeech"></div>
+        <div class="field"><label for="meaning">中文释义</label><input id="meaning"></div>
+      </div>
+      <div class="field"><label for="forms">词形</label><input id="forms"></div>
+      <div class="field"><label for="memoryAid">辅助记忆</label><textarea id="memoryAid"></textarea></div>
+      <div class="field"><label for="originalContext">原始语境</label><textarea id="originalContext"></textarea></div>
+      <div class="field"><label for="example">例句</label><textarea id="example"></textarea></div>
+      <div class="grid">
+        <div class="field"><label for="sourceTitle">来源标题</label><input id="sourceTitle"></div>
+        <div class="field"><label for="sourceUrl">来源 URL</label><input id="sourceUrl" type="url"></div>
+      </div>
+      <div class="actions">
+        <button id="save" class="primary">确认加入单词本</button>
+        <button id="regenerate" class="secondary">重新生成</button>
+      </div>
+      <div id="status" class="status" hidden></div>
+    </section>
+  </main>
+  <script type="module" src="capture.js"></script>
+</body>
+</html>

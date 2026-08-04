@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VocabClip</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="popup">
+    <div class="hero"><span class="mark">V</span><div><h1>VocabClip</h1><div class="muted">剪藏 · 记录 · 复习</div></div></div>
+    <div id="dueCount" class="count">—</div>
+    <div id="dueLabel" class="muted">正在读取今日任务</div>
+    <div class="actions">
+      <button id="reviewButton" class="primary">开始复习</button>
+      <button id="openButton" class="secondary">打开单词本</button>
+      <button id="settingsButton" class="secondary">设置</button>
+    </div>
+    <div id="status" class="status" hidden></div>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

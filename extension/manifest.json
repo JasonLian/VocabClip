@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "VocabClip",
+  "version": "0.1.0",
+  "description": "Clip English words, save them to Obsidian, and review with spaced repetition.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyVvAM45lbl/w4oOYgNFoK6+2qqfuK0kaHwMyvDZo1dMJvmJ4CkoSwcEyJBf9X/1Q0yNUy/cDeHcxe3727z8zYVs9nv1UfcuL7el4QFQPaKx6ZFOS2EFWVhbbBEZrUdYsmcphjUTbAU1h1Xtf1C78wQt/uCN6db0FC3BxsEJ1IeVo2esS9YIJfPXsPDCNlHOOtm1bz6YkoVTGa7sZdAjudNMRKDFAV5Cu6MCVTQDN1Uphrx9+FpN+O+sm9tTPoncBjjqVkDH8LjcVGSDY9hOmtuLE5A/fh29CE+sP/0ZSlIvCvuAfABDZ9p+xZ2zol1QxNbfGNcRaiM5Tp93J+sGodwIDAQAB",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "contextMenus",
+    "nativeMessaging",
+    "notifications",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "VocabClip",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "options_page": "options.html"
+}
