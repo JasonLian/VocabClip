@@ -1,0 +1,16 @@
+{
+  "name": "vocabclip",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "package:release": "node scripts/package-release.mjs",
+    "install:host": "node scripts/install-host.mjs",
+    "uninstall:host": "node scripts/uninstall-host.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

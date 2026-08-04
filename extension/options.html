@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VocabClip 设置</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <div class="hero"><span class="mark">V</span><div><h1>VocabClip 设置</h1><div class="muted">配置本地单词本、DeepSeek 和复习提醒</div></div></div>
+
+      <h2>Obsidian 单词本</h2>
+      <div class="field">
+        <label for="notebookPath">Markdown 绝对路径</label>
+        <input id="notebookPath" type="text" spellcheck="false">
+      </div>
+      <button id="testNotebook" class="secondary">测试文件连接</button>
+
+      <h2>DeepSeek</h2>
+      <div class="field">
+        <label for="apiKey">API Key（仅保存在当前浏览器配置）</label>
+        <input id="apiKey" type="password" autocomplete="off" placeholder="sk-...">
+      </div>
+      <div class="field">
+        <label for="model">模型</label>
+        <select id="model">
+          <option value="deepseek-v4-flash">deepseek-v4-flash（默认）</option>
+          <option value="deepseek-v4-pro">deepseek-v4-pro</option>
+        </select>
+      </div>
+      <button id="testDeepSeek" class="secondary">测试 API</button>
+
+      <h2>学习提醒</h2>
+      <div class="field">
+        <label>学习星期</label>
+        <div id="weekdays" class="weekdays"></div>
+      </div>
+      <div class="field">
+        <label for="reminderTime">提醒时间</label>
+        <input id="reminderTime" type="time">
+      </div>
+
+      <div class="actions"><button id="save" class="primary">保存设置</button></div>
+      <div id="status" class="status" hidden></div>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
