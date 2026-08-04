@@ -44,6 +44,18 @@ Edge Native Messaging
 
 ## 安装
 
+### 从 Release 安装
+
+从 GitHub Releases 下载 `VocabClip-v0.1.0-macos.zip`，解压后进入目录：
+
+```bash
+npm run install:host
+```
+
+随后打开 `edge://extensions`，加载压缩包中的 `dist/extension`。
+
+### 从源码安装
+
 克隆仓库并进入项目目录：
 
 ```bash
@@ -156,4 +168,5 @@ tests/         Node.js 内置测试
 ```bash
 npm test
 npm run build
+npm run package:release
 ```
