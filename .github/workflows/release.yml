@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vocabclip-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm test
+      - run: npm run build
+      - run: npm run package:release
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          ASSET="release/VocabClip-${VERSION}-macos.zip"
+          NOTES="首个可用版本：支持 Edge 划词剪藏、DeepSeek 学习卡片、本地 Obsidian Markdown 写入、艾宾浩斯复习计划，以及可配置的学习星期与提醒时间。"
+
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "Release $VERSION already exists; skipping."
+          else
+            gh release create "$VERSION" "$ASSET" \
+              --target "$GITHUB_SHA" \
+              --title "VocabClip $VERSION" \
+              --notes "$NOTES" \
+              --generate-notes \
+              --latest
+          fi
