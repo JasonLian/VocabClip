@@ -63,7 +63,6 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
 
 chrome.notifications.onClicked.addListener(async (notificationId) => {
   if (notificationId !== "vocabclip-review") return;
-  await chrome.tabs.create({ url: chrome.runtime.getURL("review.html") });
   chrome.notifications.clear(notificationId);
 });
 
@@ -265,7 +264,7 @@ async function maybeNotifyDueCards(startupCheck) {
       type: "basic",
       iconUrl: chrome.runtime.getURL("icon.png"),
       title: "VocabClip 复习提醒",
-      message: `今天有 ${dueCount} 个单词需要复习`,
+      message: `今天有 ${dueCount} 个单词需要复习，点击工具栏中的 VocabClip 图标开始`,
       priority: 1,
     });
     await chrome.storage.local.set({ lastNotifiedDate: today });
