@@ -7,14 +7,14 @@
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; background: #f5f7fb; }
+body { margin: 0; min-width: 340px; background: #f5f7fb; font-size: 16px; }
 main { width: min(760px, calc(100vw - 32px)); margin: 24px auto; }
-.popup { width: 340px; margin: 0; padding: 18px; }
+.popup { width: 380px; margin: 0; padding: 18px; }
 .panel { background: #fff; border: 1px solid #e3e8f2; border-radius: 14px; padding: 20px; box-shadow: 0 8px 24px rgba(30, 45, 75, .06); }
 h1 { margin: 0 0 6px; font-size: 22px; }
 h2 { margin: 22px 0 10px; font-size: 16px; }
 p { line-height: 1.55; }
-.muted { color: #68738a; font-size: 13px; }
+.muted { color: #68738a; font-size: 15px; }
 .hero { display: flex; align-items: center; gap: 10px; }
 .mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #3457d5; color: white; font-weight: 750; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -37,13 +37,18 @@ button:disabled { opacity: .55; cursor: not-allowed; }
 .weekday { display: flex; align-items: center; gap: 5px; background: #f1f4f9; border-radius: 8px; padding: 7px 9px; font-size: 13px; }
 .weekday input { width: auto; margin: 0; }
 .count { font-size: 38px; font-weight: 760; color: #3457d5; line-height: 1; margin: 18px 0 4px; }
-.card-term { font-size: 32px; font-weight: 760; margin: 22px 0 4px; }
-.ipa { color: #68738a; }
-.answer { margin-top: 20px; padding-top: 18px; border-top: 1px solid #e5e9f1; }
-.answer dl { display: grid; grid-template-columns: 86px 1fr; gap: 8px 12px; }
-.answer dt { color: #68738a; }
+.review-header { display: flex; align-items: center; gap: 12px; min-height: 28px; }
+.text-button { padding: 4px 0; background: transparent; color: #3457d5; font-size: 15px; }
+#reviewCard { display: grid; gap: 10px; margin-top: 14px; }
+.card-term { font-size: 34px; font-weight: 760; margin: 0; line-height: 1.1; }
+.ipa { color: #68738a; font-size: 17px; }
+.source-box { font-size: 17px; line-height: 1.45; padding: 10px 12px; }
+#reviewCard .actions { margin-top: 0; }
+.answer { margin-top: 2px; padding-top: 12px; border-top: 1px solid #e5e9f1; font-size: 17px; line-height: 1.45; }
+.answer dl { display: grid; grid-template-columns: 78px 1fr; gap: 7px 12px; }
+.answer dt { color: #68738a; font-size: 16px; }
 .answer dd { margin: 0; }
-.progress { height: 7px; border-radius: 99px; overflow: hidden; background: #e9edf4; margin: 16px 0; }
+.progress { height: 7px; border-radius: 99px; overflow: hidden; background: #e9edf4; margin: 12px 0 16px; }
 .progress > div { height: 100%; background: #3457d5; }
 .source-box { background: #f4f6fa; border-radius: 9px; padding: 10px 12px; word-break: break-word; }
 @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } main { margin: 12px auto; } .panel { padding: 16px; } }
