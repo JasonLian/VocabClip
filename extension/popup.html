@@ -8,15 +8,45 @@
 </head>
 <body>
   <main class="popup">
-    <div class="hero"><span class="mark">V</span><div><h1>VocabClip</h1><div class="muted">剪藏 · 记录 · 复习</div></div></div>
-    <div id="dueCount" class="count">—</div>
-    <div id="dueLabel" class="muted">正在读取今日任务</div>
-    <div class="actions">
-      <button id="reviewButton" class="primary">开始复习</button>
-      <button id="openButton" class="secondary">打开单词本</button>
-      <button id="settingsButton" class="secondary">设置</button>
-    </div>
-    <div id="status" class="status" hidden></div>
+    <section id="dashboardView">
+      <div class="hero"><span class="mark">V</span><div><h1>VocabClip</h1><div class="muted">剪藏 · 记录 · 复习</div></div></div>
+      <div id="dueCount" class="count">—</div>
+      <div id="dueLabel" class="muted">正在读取今日任务</div>
+      <div class="actions">
+        <button id="reviewButton" class="primary">开始复习</button>
+        <button id="openButton" class="secondary">打开单词本</button>
+        <button id="settingsButton" class="secondary">设置</button>
+      </div>
+      <div id="dashboardStatus" class="status" hidden></div>
+    </section>
+
+    <section id="reviewView" hidden>
+      <div class="review-header">
+        <button id="backButton" class="text-button" aria-label="返回今日任务">‹ 返回</button>
+        <div id="summary" class="muted">正在读取到期单词</div>
+      </div>
+      <div class="progress"><div id="progressBar" style="width:0"></div></div>
+      <div id="empty" hidden>
+        <p>今日任务已完成。</p>
+        <div class="actions">
+          <button id="returnButton" class="primary">返回今日任务</button>
+          <button id="reviewOpenNotebook" class="secondary">打开单词本</button>
+        </div>
+      </div>
+      <div id="reviewCard" hidden>
+        <div id="term" class="card-term"></div>
+        <div id="ipa" class="ipa"></div>
+        <div id="sourceContext" class="source-box"></div>
+        <div class="actions"><button id="reveal" class="primary">显示答案</button></div>
+        <div id="answer" class="answer" hidden></div>
+        <div id="ratings" class="actions" hidden>
+          <button data-rating="forgot" class="danger">忘记</button>
+          <button data-rating="fuzzy" class="secondary">模糊</button>
+          <button data-rating="known" class="primary">认识</button>
+        </div>
+      </div>
+      <div id="reviewStatus" class="status" hidden></div>
+    </section>
   </main>
   <script type="module" src="popup.js"></script>
 </body>
