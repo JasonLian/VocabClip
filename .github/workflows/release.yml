@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - .github/workflows/release.yml
+      - package.json
 
 permissions:
   contents: write
@@ -34,7 +35,7 @@ jobs:
         run: |
           VERSION="v$(node -p "require('./package.json').version")"
           ASSET="release/VocabClip-${VERSION}-macos.zip"
-          NOTES="首个可用版本：支持 Edge 划词剪藏、DeepSeek 学习卡片、本地 Obsidian Markdown 写入、艾宾浩斯复习计划，以及可配置的学习星期与提醒时间。"
+          NOTES="复习改为直接在扩展弹窗内完成：评分后继续下一张卡片，提醒不再新开复习页面；同时收紧卡片间距并放大正文。"
 
           if gh release view "$VERSION" >/dev/null 2>&1; then
             echo "Release $VERSION already exists; skipping."
